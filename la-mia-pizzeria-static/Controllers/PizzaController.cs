@@ -31,7 +31,6 @@ namespace la_mia_pizzeria_static.Controllers
 
         }
 
-        ùù
         [HttpGet]
         public IActionResult Details(long id)
         {
