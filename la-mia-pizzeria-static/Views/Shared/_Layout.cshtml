@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - La mia pizzeria</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/la_mia_pizzeria_static.styles.css" asp-append-version="true" />
+</head>
+<body class="bg-danger">
+    <header class="bg-danger border-bottom border-light">
+        <div class="d-flex justify-content-between align-items-center px-5 py-3" style="width:100%;">
+            <div class="d-flex justify-content-start align-items-center" style="width:50%;">
+                <h1 class="fs-3 fw-bold" asp-area="" asp-controller="Home" asp-action="Index">Di Nardo's pizza</h1>
+                <ul class="d-flex justify-content-center align-items-center" style="width:500px;">
+                    <li>
+                        <a class="nav-link text-dark" aria-current="page" href="@Url.Action("Index", "User")">Admin</a>
+                    </li>
+                    <!-- code omitted -->
+                    <partial name="_LoginPartial" />
+                </ul>
+            </div>
+            <div class="d-flex justify-content-end align-items-center" style="width:50%;">
+                <ul class="d-flex justify-content-center align-items-center gap-3">
+                    <li>
+                        <a class="fw-bold text-white" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                    </li>
+                    <li>
+                        <a class="fw-bold text-white" asp-area="" asp-controller="Pizza" asp-action="Index">Menù</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <div>
+        <main role="main">
+            @RenderBody()
+        </main>
+    </div>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

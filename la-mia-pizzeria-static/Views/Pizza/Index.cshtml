@@ -1,0 +1,33 @@
+﻿@model List<Pizza>
+
+<section class="container py-5 d-flex justify-content-center align-items-start gap-5">
+    <div class="justify-content-center">
+        <a href="@Url.Action("Create", "Pizza")" class="btn btn-light text-danger ">Crea</a>
+    </div>
+    <ul class="d-flex justify-content-start align-items-center flex-wrap gap-5 px-5">
+        @foreach(Pizza pizza in Model)
+        {
+            <li class="card bg-danger border-light" style="width: 300px;">
+                <a href="@Url.Action("Details", "Pizza", new{id=@pizza.Id})" style="text-decoration: none; color: black;">
+                    <img src="@pizza.Img" alt="Pizza1" class="card-img-top bg-danger" style="height: 200px;">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold text-white">@pizza.Nome</h5>
+                        <div class="text-dark">@pizza.Prezzo &euro;</div>
+                        <div class="d-flex justify-content-center align-items-center mt-2 gap-2 row">
+                            <div class="btn btn-warning" style="width: 90%;">
+                                <a href="@Url.Action("Update", "Pizza", new {Id = pizza.Id})">Modifica</a>
+                            </div>
+                            <form asp-controller="Pizza" asp-action="Delete" asp-route-id="@pizza.Id" method="post" class="d-flex justify-content-center align-items-center">
+                                <button type="submit" class="btn btn-dark" style="width: 98%;">
+                                    <div class="text-light">Delete</div>
+                                </button>
+                            </form>
+                            <div class="btn btn-success" style="width: 90%;">Acquista</div>
+                        </div>
+                    </div>
+                </a>
+                
+            </li>
+        }
+    </ul>
+</section>

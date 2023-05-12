@@ -1,0 +1,15 @@
+﻿@model Pizza
+
+<section class="d-flex justify-content-center align-content-center py-5">
+    <div class="card bg-danger border-light" style="width: 300px;">
+        <img src="@Model.Img" class="card-img-top bg-danger" alt="" style="height: 200px;">
+        <div class="card-body">
+            <h5 class="card-title fw-bold text-white">@Model.Nome</h5>
+            <p class="card-text">@Model.Descrizione</p>
+            <div class="d-flex justify-content-between align-items-center mt-5">
+                <div class="text-dark">@Model.Prezzo &euro;</div>
+                <div class="btn btn-success">Acquista</div>
+            </div> 
+        </div>
+    </div>
+</section>

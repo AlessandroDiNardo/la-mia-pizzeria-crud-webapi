@@ -1,0 +1,21 @@
+html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+ms_cointainer {
+    max-width: 1320px;
+}
+
+img {
+    object-fit: cover;
+}
