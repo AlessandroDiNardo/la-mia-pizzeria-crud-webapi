@@ -2,9 +2,8 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using System.Linq;
 
-namespace la_mia_pizzeria_static.Controllers.Api
+namespace la_mia_pizzeria_static.Controllers
 {
     [Route("api/[controller]/[action]")]
     [ApiController]
@@ -21,17 +20,14 @@ namespace la_mia_pizzeria_static.Controllers.Api
                 else
                     pizzas = db.Pizza.Where(p => p.Nome == name).ToList();
                 return Ok(pizzas);
-
-
-
             }
         }
         [HttpPut("{id}")]
         public IActionResult PizzaId(int id)
         {
-            using (PizzaContext ctx = new PizzaContext())
+            using (PizzaContext db = new PizzaContext())
             {
-                var pizza = ctx.Pizza.Where(p => p.Id == id).FirstOrDefault();
+                var pizza = db.Pizza.Where(p => p.Id == id).FirstOrDefault();
                 return Ok(pizza);
             }
         }

@@ -1,7 +1,6 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using la_mia_pizzeria_static;
-using System.Text.Json.Serialization;
 
 namespace la_mia_pizzeria_static
 {
